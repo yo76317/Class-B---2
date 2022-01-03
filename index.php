@@ -15,7 +15,7 @@
 <iframe name="back" style="display:none;"></iframe>
 	<div id="all">
     	
-		<?php include header.php ?>
+		<?php include "front/header.php" ?>
 
         <div id="mm">
         	<div class="hal" id="lef">
@@ -28,16 +28,32 @@
             <div class="hal" id="main">
             	<div>
 					<!-- 改跑馬燈 -->
-            		<marquee style="width:82%; display:inline-block;">請民眾踴躍跑馬燈</marquee><span style="width:18%; display:inline-block;">
+            		<marquee style="width:82%; display:inline-block;">請民眾踴躍跑馬燈</marquee>
+					<span style="width:18%; display:inline-block;">
                     	<a href="?do=login">會員登入</a>
                     </span>
                 	<div class="">
+
+					<?php
+						$do=$_GET['do'] ?? 'home';
+						$file='front/'.$do.".php";
+						// file_exists(檢查文件或目錄是否存在)
+						// 假如檔案存在，載入$file
+						// 不然幫我載入home
+						if(file_exists($file)){
+							include $file;
+						}else{
+							include "front/home.php";
+						}
+
+					?>
+
 					</div>
         		</div>
     		</div>
     	</div>
 
-		<?php include footer.php ?>
+		<?php include "front/footer.php" ?>
 
 	</div>
 
