@@ -32,7 +32,25 @@
 					<!-- 改跑馬燈 -->
             		<marquee style="width:80%; display:inline-block;">請民眾踴躍投稿電子報，讓電子報成為大家相互交流、分享的園地！詳見最新文章</marquee>
 					<span style="width:18%; display:inline-block;">
-                    	<a href="?do=login">會員登入</a>
+					<?php
+						// 如果存在
+						if(isset($_SESSION['login'])){
+					?>
+						
+						歡迎<button>登出</button>
+                    	歡迎admin<button>管理</button>|<button>登出</button>
+					<?php	
+						// 如果不存在
+                    }else{
+					?>
+						<a href="?do=login">會員登入</a>
+					<?php
+					}	
+					?>
+						
+						
+						
+                    	
                     </span>
                 	<div class="">
 
