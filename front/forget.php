@@ -8,11 +8,13 @@
         <div>
             <button onclick="find()">尋找</button>
         </div>
-</fieledset>
+</fieldset>
 
 <script>
 function find(){
-    $.post("api.find_pw.php",{email})
+    $.post("api/find_pw.php",{email:$("#email").val()},(result)=>{
+        $("#result").text(result)
+    })
 }
 
-</script>
+</script> 
