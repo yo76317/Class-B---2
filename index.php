@@ -39,7 +39,7 @@
 						if(isset($_SESSION['login'])){
 							if($_SESSION['login']=='admin'){
 							?>
-								歡迎admin，<br><button>管理</button>|<button onclick='logout()'>登出</button>
+								歡迎admin，<br><button onclick="location.href='back.php'">管理</button>|<button onclick='logout()'>登出</button>
 							<?php
 							// 如果不存在
 							}else{
