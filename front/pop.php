@@ -92,16 +92,19 @@ $(".switch").hover(
         let news=$(this).data('news')
     $.post("api/good.php",{type,news},()=>{
         location.reload()
-/*         switch(type){
-            case 1:
-               $(this).text("讚");
-               $(this).data('type',2)
-            break;
-            case 2:
-                $(this).text("收回讚");
-                $(this).data('type',1)
-            break;
-        } */
+
     })
 })
 </script> 
+<!-- 
+switch(type){
+case 1:
+   $(this).text("讚");
+   $(this).data('type',2)
+break;
+case 2:
+    $(this).text("收回讚");
+    $(this).data('type',1)
+break;
+ -->
+ 
